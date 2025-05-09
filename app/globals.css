@@ -1,40 +1,116 @@
-body {
-  background-color: #111;
-  color: #e0e0e0;
-  font-family: 'Press Start 2P', cursive;
-  image-rendering: pixelated;
-  padding: 20px;
+/* Global Styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  font-family: 'Press Start 2P', monospace;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+/* Sigil Page */
+.sigil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 256px;
+  height: 256px;
+}
+
+.sigil-canvas, .cover-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+}
+
+button {
+  background: #222;
+  color: #fff;
+  border: 2px solid #555;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background: #444;
+  border-color: #777;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* General Styles for Layout */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding: 2rem;
 }
 
-button {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #222;
-  border: 2px solid #fff;
+h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Title styling */
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #fff;
-  padding: 10px 20px;
-  cursor: pointer;
-  image-rendering: pixelated;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff;
 }
 
-canvas {
-  border: 2px solid #fff;
-  image-rendering: pixelated;
+/* Body background and animation */
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAQlBMVEX///8AAAD8/Pz39/fZ2dn09PTe3t7MzMzw8PDc3NzV1dXg4ODg4ODs7Ozq6urj4+PLy8vKysr5+fnd4nISAAAAAXRSTlMAQObYZgAAADpJREFUCNdjYMAFJiYGJiYmBgYGBiYGBgZmZgYGBgYGBgYmBgYGJiYGJgYGBgZGBgAUEADKQQB4pZgI8UAAAAASUVORK5CYII=");
-  opacity: 0.04;
-  z-index: -1;
-  pointer-events: none;
+/* Additional visual effects */
+.sigil-container {
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
