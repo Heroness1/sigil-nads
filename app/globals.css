@@ -1,50 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 body {
-  margin: 0;
-  background: #111;
-  color: white;
+  background-color: #111;
+  color: #e0e0e0;
   font-family: 'Press Start 2P', cursive;
+  image-rendering: pixelated;
+  padding: 20px;
+  margin: 0;
 }
 
 .container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 button {
-  margin-top: 20px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #222;
+  border: 2px solid #fff;
+  color: #fff;
   padding: 10px 20px;
-  font-family: inherit;
-  font-size: 14px;
-  background: #333;
-  color: white;
-  border: none;
   cursor: pointer;
-}
-
-button:hover {
-  background: #555;
-}
-
-.sigil {
-  margin: 30px;
-  opacity: 0;
-  transform: scale(0);
-  animation: reveal 1s forwards;
   image-rendering: pixelated;
 }
 
-.sigil.visible {
-  opacity: 1;
+canvas {
+  border: 2px solid #fff;
+  image-rendering: pixelated;
 }
 
-@keyframes reveal {
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAQlBMVEX///8AAAD8/Pz39/fZ2dn09PTe3t7MzMzw8PDc3NzV1dXg4ODg4ODs7Ozq6urj4+PLy8vKysr5+fnd4nISAAAAAXRSTlMAQObYZgAAADpJREFUCNdjYMAFJiYGJiYmBgYGBiYGBgZmZgYGBgYGBgYmBgYGJiYGJgYGBgZGBgAUEADKQQB4pZgI8UAAAAASUVORK5CYII=");
+  opacity: 0.04;
+  z-index: -1;
+  pointer-events: none;
 }
